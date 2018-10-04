@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slider</title>
+    <style>
+        #wrapper {
+            width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+        }
+
+        #slider {
+            display: flex;
+            position: absolute;
+
+
+        }
+
+        .horizTranslate {
+            -webkit-transition: 3s;
+            -moz-transition: 3s;
+            -ms-transition: 3s;
+            -o-transition: 3s;
+            transition: 3s;
+        }
+
+        #slider img {
+            cursor: pointer;
+        }
+
+        .active {
+            position: fixed;
+            height: 70%;
+            left: calc(-50vw + 50%);
+            right: calc(-50vw + 50%);
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="slider" class="horizTranslate" onmouseenter="clearInterval(sliding)" onmouseleave="setSLiding()">
+            <img src="https://source.unsplash.com/random/500x300" alt="">
+            <img src="https://picsum.photos/500/300/?random" alt="">
+            <img src="https://source.unsplash.com/random/500x300" alt="">
+            <img src="https://picsum.photos/500/300/?random" alt="">
+        </div>
+    </div>
+    <script src="./slider.js"></script>
+</body>
+
+</html>
